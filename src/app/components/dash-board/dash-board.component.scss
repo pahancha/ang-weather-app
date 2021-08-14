@@ -1,39 +1,39 @@
-.weather {
-  &-boxes-wrapper {
-    align-items: center;
-    margin: auto;
-    width: 50%;
+// .weather {
+//   &-boxes-wrapper {
+//     align-items: center;
+//     margin: auto;
+//     width: 50%;
 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "weather-box weather-box";
-  }
-  &-box {
-    width: 350px;
-    margin: auto;
-    padding: 30px;
-    border-radius: 20px;
-  }
-  &-main-info {
-    background-image: url("../../../assets/cloud-photos/clouds-background-blue.jpg");
-    display: grid;
-    height: 180px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+//     display: grid;
+//     grid-template-columns: 1fr 1fr;
+//     grid-template-areas: "weather-box weather-box";
+//   }
+//   &-box {
+//     width: 350px;
+//     margin: auto;
+//     padding: 30px;
+//     border-radius: 20px;
+//   }
+//   &-main-info {
+//     background-image: url("../../../assets/cloud-photos/clouds-background-blue.jpg");
+//     display: grid;
+//     height: 180px;
+//     border-top-left-radius: 10px;
+//     border-top-right-radius: 10px;
 
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "city-date temp";
-  }
+//     grid-template-columns: 1fr 1fr;
+//     grid-template-areas: "city-date temp";
+//   }
 
-  &-other-info {
-    background-color: #383b47;
-    color: white;
-    height: 50px0px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+//   &-other-info {
+//     background-color: #383b47;
+//     color: white;
+//     height: 50px0px;
+//     border-bottom-left-radius: 10px;
+//     border-bottom-right-radius: 10px;
 
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: "weather-other-info-left weather-other-info-middle weather-other-info-right";
-  }
-}
+//     display: grid;
+//     grid-template-columns: 1fr 1fr 1fr;
+//     grid-template-areas: "weather-other-info-left weather-other-info-middle weather-other-info-right";
+//   }
+// }

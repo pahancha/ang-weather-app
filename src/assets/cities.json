@@ -12,14 +12,12 @@
             "Temp":"8.6",
             "Status":"Clear"
         },
-
         {
             "CityCode":"2644210",    
             "CityName":"Liverpool",
             "Temp":"16.5",
             "Status":"Rain"
-        },
-                    
+        },   
         {         
             "CityCode":"2988507",        
             "CityName":"Paris",         
