@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 // import * as cities from './../../../assets/cities.json';
-
 @Component({
   selector: 'app-dash-board',
   templateUrl: './dash-board.component.html',

@@ -1,42 +1,53 @@
 export interface Weather {
-    cityName: string;
-    countryName: string;
-    weather: Array<weatherInfo>; //Information on sky(clouds), icon
-    moreInfo: Array<moreInfo>; // pressure, humidity
-    temparature:Array<temparatureInfo>; //temparature, mintem, maxtem
-    sunInfo:Array<sunDetails>; // sunrice time, sunset time
-    visibility:string;
-    wind:Array<windInfo>; //speed, angle
+    coord:Array<lonlat>;
+    sys:Array<GeoandSun>;
+    weather:Array<WeatherInfo>;
+    main:Array<MainInfo>;
+    visibility:number;
+    wind:Array<WindInfo>;
+    clouds:Array<CloudInfo>;
+    dt:number;
+    id:number;
+    name:string;
 }
 
-// export interface APIResponse<T>{
-//     results: Array<T>;
-// }
+export interface APIResponse<T>{
+    list:Array<T>;
+}
 
-export interface weatherInfo{
-    id:string;
+
+interface lonlat{
+    lon:number;
+    lat:number;
+}
+
+interface GeoandSun{
+    country:string;
+    timezeon:number;
+    sunrise:number;
+    sunset:number;
+}
+
+interface WeatherInfo {
+    id:number;
     main:string;
     description:string;
     icon:string;
 }
 
-export interface moreInfo{
-    pressure:string;
-    humidity:string;
+interface MainInfo {
+    temp:number;
+    feels_like:number;
+    temp_min:number;
+    temp_max:number;
+    pressure:number;
+    humidity:number;
+}
+interface WindInfo {
+    speed:number;
+    deg:number;
 }
 
-export interface temparatureInfo {
-    temparature:string;
-    min_temp:string;
-    max_temp:string;
-}
-
-export interface sunDetails {
-    sunrise:string;
-    sunset:string;
-}
-
-export interface windInfo { 
-    spped:string;
-    deg:string;
+interface CloudInfo {
+    all:number;
 }

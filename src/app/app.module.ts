@@ -14,6 +14,7 @@ import { DashBoardComponent } from './components/dash-board/dash-board.component
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { WeatherBoxComponent } from './components/weather-box/weather-box.component';
+import { FooterComponent } from './components/footer/footer.component';
 // import { HttpHeadersInterceptor } from './interceptors/http-headers-interceptor';
 
 @NgModule({
@@ -23,6 +24,7 @@ import { WeatherBoxComponent } from './components/weather-box/weather-box.compon
     SearchBarComponent,
     HeaderComponent,
     WeatherBoxComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

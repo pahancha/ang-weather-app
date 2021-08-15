@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
+import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 import { HttpService } from 'src/app/services/http.service';
-import { Weather } from 'src/app/weather';
+import { APIResponse, Weather } from 'src/app/weather';
+// import {  APIResponse, Weather } from 'src/app/weather';
 import * as cities from './../../../assets/cities.json';
 
 @Component({
@@ -11,19 +13,22 @@ import * as cities from './../../../assets/cities.json';
   styleUrls: ['./weather-box.component.scss']
 })
 export class WeatherBoxComponent implements OnInit {
+  pictures:string[] = ['blue','green','orange','purple','red','white','yellow'];
+  
   cityCodes: string[];
-  public weatherInfo:Observable<Weather>;
+  // public weatherInfo:Observable<Weather>;
+  // public weatherList:APIResponse<Weather>;
+  public weatherList:Array<Weather>;
 
   constructor(
     private httpServide: HttpService,
-    private activatedRoute: ActivatedRoute
   ) { }  
 
 
   ngOnInit(): void {
     this.getCityCodes();
-    this.getWeatherDetails();
-    // console.log(this.httpServide.getWeatherInfo("1248991"))
+    // this.getWeatherDetails();
+    this.getweatherDetailsService();
   }
 
   getCityCodes(){
@@ -33,12 +38,34 @@ export class WeatherBoxComponent implements OnInit {
 
   getWeatherDetails(){
     this.cityCodes.map(code => {
-      this.httpServide.getWeatherInfo(code).subscribe(data => {console.log(data)})
-    })
-  }
+      this.httpServide.getWeatherInfo(code).subscribe(data => {
+        // console.log(data)
+      //  this.weatherList = data.results;
+      //  console.log(this.weatherList);
 
-  
-
-  
+    });
+})
 
 }
+getweatherDetailsService(){
+  this.cityCodes.map(code => {
+    this.httpServide.getWeatherInfo(code).subscribe(dataset=>{
+      // console.log(dataset.list[0]); 
+      this.weatherList = dataset.list
+      console.log(this.weatherList)
+    });
+  })
+
+}
+
+
+
+  // getWeatherDetails(){
+  //   this.cityCodes.map(code => {this.httpServide.getWeatherInfo(code).subscribe(data=> this.weatherList = data)});
+  //   console.log(this.weatherList.results)
+
+  // }
+
+
+  
+} 
