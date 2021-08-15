@@ -1,0 +1,27 @@
+.background {
+  background-image: url("../../../assets/cloud-photos/background.jpg");
+}
+
+.details {
+  &-box {
+    color: white;
+    justify-content: center;
+    background-color: rgb(80, 173, 235);
+    width: 750px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 5px;
+  }
+  &-details-main-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1hr;
+    grid-template-areas: "details-top details-left details-right";
+  }
+
+  &-details-other-info {
+    background-color: #383b47;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "details-other-info-left details-other-info-middle details-other-info-right";
+  }
+}
