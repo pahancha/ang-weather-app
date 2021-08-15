@@ -1,6 +1,10 @@
 .weather {
   &-boxes-wrapper {
     align-items: center;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+
     margin: auto;
     width: 50%;
 
@@ -18,6 +22,7 @@
     background-image: url("../../../assets/cloud-photos/clouds-background-blue.jpg");
     display: grid;
     height: 180px;
+    color: white;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 
@@ -28,12 +33,82 @@
   &-other-info {
     background-color: #383b47;
     color: white;
-    height: 50px0px;
+    height: 75px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: "weather-other-info-left weather-other-info-middle weather-other-info-right";
+  }
+
+  &-other-info-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    padding-bottom: 50px;
+  }
+  &-other-info-left h6 {
+    font-size: 10px;
+    margin: auto;
+  }
+
+  &-other-info-left h6 b {
+    font-weight: 500;
+  }
+
+  &-other-info-middle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+  }
+
+  &-other-info-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding: 2px;
+  }
+}
+
+.city-date {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+}
+.city-date h3 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.temp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+}
+.temp h4 {
+  margin-bottom: 2px;
+  padding-inline: 20px;
+  font-weight: 500;
+  margin: auto;
+  padding-bottom: 2px;
+}
+
+.temparature {
+  font-size: 40px;
+}
+
+@media screen and (max-width: 800px) {
+  .weather-boxes-wrapper {
+    justify-content: center;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "weather-box"
+      "weather-box";
   }
 }

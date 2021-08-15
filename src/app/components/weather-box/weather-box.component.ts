@@ -18,7 +18,11 @@ export class WeatherBoxComponent implements OnInit {
   cityCodes: string[];
   // public weatherInfo:Observable<Weather>;
   // public weatherList:APIResponse<Weather>;
-  public weatherList:Array<Weather>;
+  // public weatherList:Array<Weather>;
+  // public weatherList:Array<Array<Weather>>;
+  // public weatherList:Array<Weather>[];
+  public weatherList:Array<Weather>=[];
+  
 
   constructor(
     private httpServide: HttpService,
@@ -51,8 +55,11 @@ getweatherDetailsService(){
   this.cityCodes.map(code => {
     this.httpServide.getWeatherInfo(code).subscribe(dataset=>{
       // console.log(dataset.list[0]); 
-      this.weatherList = dataset.list
-      console.log(this.weatherList)
+      let weatherData:Weather = dataset.list[0]; 
+      console.log(weatherData.name);
+      this.weatherList.push(weatherData);
+      // this.weatherList.push(weatherData);
+      // console.log(this.weatherList)
     });
   })
 

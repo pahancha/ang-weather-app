@@ -1,30 +1,33 @@
 <div class="weather-boxes-wrapper">
+    <!-- <div class="weather-box" *ngFor="let weather of weatherList"> -->
     <div class="weather-box" *ngFor="let weather of weatherList">
+        
         <div class="weather-main-info">
             <div class="city-date">
-                <h3>{{ weather.name }}</h3>
-                <h2>{{ weather.sys.country}}</h2>
-                <h4>{{ weather.visibility }}</h4>
+                <h3>{{ weather.name }}, {{weather.sys.country }}</h3>
+                <h6></h6>
+                <h4>{{ weather.clouds.all }}</h4>
             </div>
             <div class="temp">
-                <h1>{{ weather.main.temp }}</h1>
-                <h4>{{ weather.main.temp_min }}</h4>
-                <h4>{{ weather.main.temp_max }}</h4>
+                <h1 class="temparature"><b>{{ weather.main.temp }}°C</b></h1>
+                <h4>Temp Min: {{ weather.main.temp_min }}°C</h4>
+                <h4>Temp Max: {{ weather.main.temp_max }}°C</h4>
             </div>
         </div>
         <div class="weather-other-info">
             <div class="weather-other-info-left">
-                <h6>Pressure : {{weather.main.pressure}}</h6>
-                <h6>Humidity : {{weather.main.humidity}} </h6>
-                <h6>Visibility :{{weather.visibility}} </h6>
+                <h6><b>Pressure</b> : {{weather.main.pressure}}</h6>
+                <h6><b>Humidity</b> : {{weather.main.humidity}} </h6>
+                <h6><b>Visibility</b> :{{weather.visibility}} </h6>
             </div>
             <div class="weather-other-info-middle">
                 <h6>Wind Speed and Deg</h6>
 
             </div>
             <div class="weather-other-info-right">
-                <h4> <b>Sunrice: </b>6.05am</h4>
-                <h4> <b>Sunset: </b>6.05pm</h4>
+                <h5> <b>Sunrice: </b>{{ weather.sys.sunrise }}</h5>
+                <h5> <b>Sunset: </b>{{ weather.sys.sunset }}</h5>
             </div>
         </div>
     </div>
+</div>
