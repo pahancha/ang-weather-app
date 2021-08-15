@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashBoardComponent } from './components/dash-board/dash-board.component';
+import { WeatherDetailsComponent } from './components/weather-details/weather-details.component';
 
 const routes: Routes = [
   {
@@ -10,6 +11,10 @@ const routes: Routes = [
   {
     path:'search/:weather-search',
     component:DashBoardComponent,
+  },
+  {
+    path:'details',
+    component:WeatherDetailsComponent,
   }
 ];
 
