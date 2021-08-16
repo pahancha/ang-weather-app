@@ -6,6 +6,7 @@ import { HttpService } from 'src/app/services/http.service';
 import { APIResponse, Weather } from 'src/app/weather';
 // import {  APIResponse, Weather } from 'src/app/weather';
 import * as cities from './../../../assets/cities.json';
+import { SearchBarComponent } from '../search-bar/search-bar.component';
 
 @Component({
   selector: 'app-weather-box',
@@ -16,11 +17,7 @@ export class WeatherBoxComponent implements OnInit {
   pictures:string[] = ['blue','green','orange','purple','red','white','yellow'];
   
   cityCodes: string[];
-  // public weatherInfo:Observable<Weather>;
-  // public weatherList:APIResponse<Weather>;
-  // public weatherList:Array<Weather>;
-  // public weatherList:Array<Array<Weather>>;
-  // public weatherList:Array<Weather>[];
+
   public weatherList:Array<Weather>=[];
   
 
@@ -64,6 +61,8 @@ getweatherDetailsService(){
   })
 
 }
+
+
 
 
 

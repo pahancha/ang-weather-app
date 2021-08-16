@@ -1,11 +1,11 @@
 <div class="search-container">
-    <form  class="search-form" #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <form  class="search-form">
         <input
             class="search-input"
             name="search"
-            ngModel
+            #input
             placeholder="Enter the city name: "
         />
-        <button class="search-button">Add City</button>
+        <button class="search-button" (click)="getCity(input.value)">Add City</button>
     </form>
 </div>
