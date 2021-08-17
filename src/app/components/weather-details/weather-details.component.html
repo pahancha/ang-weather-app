@@ -1,11 +1,12 @@
 <div class="background">
     <app-header></app-header>
 
-    <div class="details-wrapper">
+    <div class="details-wrapper" >
         <div class="details-box">
             <div class="details-main-info">
                 <div class="details-top">
-                    <h1>Colombo, LK</h1>
+                    <h1>{{ weatherData.name }}</h1>
+                    <h1>{{ weatherData.dt | date}}</h1>
                 </div>
                 <div class="details-left">
                     <h4>Few Clouds</h4>

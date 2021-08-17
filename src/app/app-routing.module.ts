@@ -13,7 +13,7 @@ const routes: Routes = [
     component:DashBoardComponent,
   },
   {
-    path:'details',
+    path:'details/:id',
     component:WeatherDetailsComponent,
   }
 ];

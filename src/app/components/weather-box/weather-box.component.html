@@ -2,37 +2,37 @@
     <!-- <div class="weather-box" *ngFor="let weather of weatherList"> -->
         <div class="weather-box" *ngFor="let weather of weatherList">
             
-            <a routerLink="/details">
-        <div class="weather-main-info">
-            <div class="city-date">
-                <h3>{{ weather.name }}, {{weather.sys.country }}</h3>
-                
-                <h4>{{ weather.weather[0].id }}</h4>
-                <h4>{{ weather.weather[0].main }}</h4>
-                <h4>{{ weather.weather[0].description }}</h4>
+        <a routerLink="/details/{{ weather.id }}" >
+            <div class="weather-main-info" >
+                <div class="city-date">
+                    <h3>{{ weather.name }}, {{weather.sys.country }}</h3>
+                    
+                    <h4>{{ weather.weather[0].id }}</h4>
+                    <h4>{{ weather.weather[0].main }}</h4>
+                    <h4>{{ weather.weather[0].description }}</h4>
+                </div>
+                <div class="temp">
+                    <h1 class="temparature"><b>{{ weather.main.temp }}°C</b></h1>
+                    <h4>Temp Min: {{ weather.main.temp_min }}°C</h4>
+                    <h4>Temp Max: {{ weather.main.temp_max }}°C</h4>
+                </div>
             </div>
-            <div class="temp">
-                <h1 class="temparature"><b>{{ weather.main.temp }}°C</b></h1>
-                <h4>Temp Min: {{ weather.main.temp_min }}°C</h4>
-                <h4>Temp Max: {{ weather.main.temp_max }}°C</h4>
-            </div>
-        </div>
-        <div class="weather-other-info">
-            <div class="weather-other-info-left">
-                <h6><b>Pressure</b> : {{weather.main.pressure}}</h6>
-                <h6><b>Humidity</b> : {{weather.main.humidity}} </h6>
-                <h6><b>Visibility</b> :{{weather.visibility}} </h6>
-            </div>
-            <div class="weather-other-info-middle">
-                <h6>Wind Speed and Deg</h6>
-                <h6>{{ weather.wind.speed }}m/s {{ weather.wind.deg }}Degree</h6>
+            <div class="weather-other-info">
+                <div class="weather-other-info-left">
+                    <h6><b>Pressure</b> : {{weather.main.pressure}}</h6>
+                    <h6><b>Humidity</b> : {{weather.main.humidity}} </h6>
+                    <h6><b>Visibility</b> :{{weather.visibility/1000}}km </h6>
+                </div>
+                <div class="weather-other-info-middle">
+                    <h6>Wind Speed and Deg</h6>
+                    <h6>{{ weather.wind.speed }}m/s {{ weather.wind.deg }} Degree</h6>
 
+                </div>
+                <div class="weather-other-info-right">
+                    <h5> <b>Sunrice: </b>{{ weather.sys.sunrise }}</h5>
+                    <h5> <b>Sunset: </b>{{ weather.sys.sunset }}</h5>
+                </div>
             </div>
-            <div class="weather-other-info-right">
-                <h5> <b>Sunrice: </b>{{ weather.sys.sunrise }}</h5>
-                <h5> <b>Sunset: </b>{{ weather.sys.sunset }}</h5>
-            </div>
-        </div>
-    </a>
+        </a>
     </div>
 </div>

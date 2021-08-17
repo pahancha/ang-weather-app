@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Weather } from 'src/app/weather';
 import * as cities from './../../../assets/cities.json';
 import { WeatherBoxComponent } from '../weather-box/weather-box.component';
+import { HttpService } from 'src/app/services/http.service';
 
 
 @Component({
@@ -11,6 +12,8 @@ import { WeatherBoxComponent } from '../weather-box/weather-box.component';
 })
 export class DashBoardComponent implements OnInit {
   cityCodess: string[];
+
+  cityName:string;
   
   weatherCollection: Weather[] = [];
   
@@ -18,16 +21,10 @@ export class DashBoardComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.getCityCodes();
+    // this.getCityCodes();
   }
 
-  getCityCodes(){
-    this.cityCodess= cities.List.map(city => {return(city.CityCode)})
-    console.log(this.cityCodess)
-  }
   
-  
-
 
 
 }

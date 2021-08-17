@@ -3,10 +3,10 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 import { HttpService } from 'src/app/services/http.service';
-import { APIResponse, Weather } from 'src/app/weather';
+import {  Weather } from 'src/app/weather';
 // import {  APIResponse, Weather } from 'src/app/weather';
 import * as cities from './../../../assets/cities.json';
-import { SearchBarComponent } from '../search-bar/search-bar.component';
+
 
 @Component({
   selector: 'app-weather-box',
@@ -19,6 +19,9 @@ export class WeatherBoxComponent implements OnInit {
   cityCodes: string[];
 
   public weatherList:Array<Weather>=[];
+  // weatherList = [];
+
+  cityName:string;
   
 
   constructor(
@@ -28,7 +31,6 @@ export class WeatherBoxComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCityCodes();
-    // this.getWeatherDetails();
     this.getweatherDetailsService();
   }
 
@@ -37,20 +39,10 @@ export class WeatherBoxComponent implements OnInit {
     console.log(this.cityCodes)
   }
 
-  getWeatherDetails(){
-    this.cityCodes.map(code => {
-      this.httpServide.getWeatherInfo(code).subscribe(data => {
-        // console.log(data)
-      //  this.weatherList = data.results;
-      //  console.log(this.weatherList);
-
-    });
-})
-
-}
 getweatherDetailsService(){
   this.cityCodes.map(code => {
     this.httpServide.getWeatherInfo(code).subscribe(dataset=>{
+      console.log(dataset.list)
       // console.log(dataset.list[0]); 
       let weatherData:Weather = dataset.list[0]; 
       console.log(weatherData.name);
@@ -59,6 +51,17 @@ getweatherDetailsService(){
       // console.log(this.weatherList)
     });
   })
+
+}
+
+
+
+getCity(city:string){
+  this.httpServide.getWeatherByCityName(city).subscribe(data => {
+    console.log(data.list)
+    // let weatherData:Weather = data.list[0]; 
+    // this.weatherList.push(weatherData);
+  });
 
 }
 
