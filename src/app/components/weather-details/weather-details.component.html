@@ -3,39 +3,45 @@
 
     <div class="details-wrapper" >
         <div class="details-box">
-            <div class="details-main-info">
-                <div class="details-top">
-                    <h1>{{ weatherData.name }}</h1>
-                    <h1>{{ weatherData.dt | date}}</h1>
+            <div class="details-top">
+                <div class="details-country">
+                    <h1>{{ weatherData.name }},{{weatherData.sys.country}}</h1>
                 </div>
+                <div class="details-date-time">
+                    <h6>{{ weatherData.dt | date:'medium':'timezone' }}</h6>
+                </div>
+            </div>
+            <div class="details-main-info">
+                
                 <div class="details-left">
-                    <h4>Few Clouds</h4>
+                    <h4>{{ weatherData.weather[0].description }}</h4>
                 </div>
                 <div class="details-right">
-                    <h1>27°C</h1>
+                    <h1>{{weatherData.main.temp}}°C</h1>
                     <div class="details-minmax">
-                        <h4>Temp Min:25°C</h4>
-                        <h4>Temp Max:28°C </h4>
+                        <h4>Temp Min: {{weatherData.main.temp_min}}°C</h4>
+                        <h4>Temp Maax: {{weatherData.main.temp_max}}°C</h4>
                     </div>
                 </div>
             </div>
+        </div>
             <div class="details-other-info">
                 <div class="details-other-info-left">
-                    <h5>Pressure: 10000ha</h5>
-                    <h5>Humidity: 78%</h5>
-                    <h5>Visibility: 8.0km</h5>
+                    <h5>Pressure: {{ weatherData.main.pressure }}hPa </h5>
+                    <h5>Humidity: {{ weatherData.main.humidity }}%</h5>
+                    <h5>Visibility: {{ weatherData.visibility }}</h5>
                 </div>
                 <div class="details-other-info-middle">
                     <h5>4.0m/s 120 Degree</h5>
                 </div>
                 <div class="details-other-info-right">
-                    <h5>Sunrise: 6.06am</h5>
-                    <h5>Sunset: 6.05pm</h5>
+                    <h5>Sunrise: {{ weatherData.sys.sunrise | date:'shortTime'}}</h5>
+                    <h5>Sunrise: {{ weatherData.sys.sunset | date:'shortTime'}}</h5>
                 </div>
             </div>
-        </div>
+        
     </div>
 
-    <app-footer></app-footer>
-
+    
 </div>
+<app-footer></app-footer>

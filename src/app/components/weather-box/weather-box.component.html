@@ -29,7 +29,7 @@
 
                 </div>
                 <div class="weather-other-info-right">
-                    <h5> <b>Sunrice: </b>{{ weather.sys.sunrise }}</h5>
+                    <h5> <b>Sunrice: </b>{{ weather.sys.sunrise | date:'shortTime'}}</h5>
                     <h5> <b>Sunset: </b>{{ weather.sys.sunset }}</h5>
                 </div>
             </div>

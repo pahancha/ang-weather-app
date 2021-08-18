@@ -23,7 +23,7 @@ interface lonlat{
 
 interface GeoandSun{
     country:string;
-    timezeon:number;
+    timezeon:string;
     sunrise:number;
     sunset:number;
 }

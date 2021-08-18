@@ -1,5 +1,6 @@
 .background {
   background-image: url("../../../assets/cloud-photos/background.jpg");
+  padding: 100px;
 }
 
 .details {
@@ -11,14 +12,67 @@
     margin: auto;
     padding: 30px;
     border-radius: 5px;
+    align-items: center;
   }
-  &-details-main-info {
+  &-country {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+  &-country h1 {
+    font-size: 25px;
+    font-weight: 500;
+  }
+  &-date-time {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+  &-date-time h6 {
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: -10px;
+  }
+  &-main-info {
     display: grid;
-    grid-template-columns: 1fr 1fr 1hr;
-    grid-template-areas: "details-top details-left details-right";
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "details-left details-right";
+  }
+  &-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    margin: auto;
+  }
+  &-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    width: 75%;
+  }
+  &-right h1 {
+    font-size: 50px;
+    font-weight: 600;
+    margin-top: 20px;
+  }
+  &-minmax {
+    margin-top: 20px;
+  }
+  &-minmax h4 {
+    padding: 0px;
+    margin: 0px;
   }
 
-  &-details-other-info {
+  &-other-info {
+    color: white;
+    justify-content: center;
+    background-color: rgb(80, 173, 235);
+    width: 750px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 5px;
+    align-items: center;
     background-color: #383b47;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
